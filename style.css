@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700;900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lexend', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- BARRES ROUGES --- */
+.red-divider {
+    border: none;
+    height: 4px;
+    background: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- SECTION ACCUEIL --- */
+.hero-section {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.server-brand h1 {
+    color: #ff0000;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    font-weight: 900;
+}
+
+.server-brand p { font-size: 1.4rem; color: #aaaaaa; margin-top: 10px; }
+
+.ip-card {
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid #ff0000;
+    border-radius: 15px;
+    padding: 35px;
+    width: 380px;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.ip-card h2 { color: #ff0000; text-align: center; font-size: 1.6rem; margin-bottom: 25px; margin-top: 0; }
+.ip-info { margin-bottom: 15px; }
+.ip-label { display: block; color: #ff0000; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 5px; }
+.ip-value { display: block; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 5px; font-family: monospace; border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 1rem; }
+
+.discord-btn {
+    display: block; text-align: center; background: #ff0000; color: white; text-decoration: none; padding: 15px; border-radius: 8px; font-weight: bold; margin-top: 25px; transition: 0.3s;
+}
+.discord-btn:hover { background: #cc0000; transform: scale(1.02); }
+
+/* --- SECTION RÈGLEMENTS --- */
+.rules-container {
+    position: relative;
+    z-index: 2;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.rules-card {
+    flex: 1;
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid #222;
+    border-top: 5px solid #ff0000;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.rules-card h2 { color: #ff0000; font-size: 1.8rem; text-transform: uppercase; text-align: center; }
+.rules-intro { color: #aaaaaa; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 15px; text-align: center;}
+.rule-category { margin-top: 30px; color: #ff0000; font-size: 1.2rem; text-transform: uppercase; border-bottom: 1px dashed rgba(255, 0, 0, 0.3); padding-bottom: 5px; font-weight: bold; }
+.rule-item { margin: 15px 0; line-height: 1.6; color: #ddd; font-size: 0.95rem; }
+.rule-item strong { color: #fff; }
+
+ul { padding-left: 20px; }
+li { margin: 10px 0; color: #ddd; list-style-type: square; font-size: 0.95rem; }
+li::marker { color: #ff0000; }
+
+footer { padding: 40px 0; text-align: center; position: relative; z-index: 2; }
+.footer-content { color: #888; font-size: 1rem; }
+.footer-content span { color: #ff0000; font-weight: bold; }
+
+@media (max-width: 1100px) {
+    .hero-section { flex-direction: column; height: auto; padding: 100px 0; text-align: center; }
+    .rules-container { flex-direction: column; }
+    .ip-card { width: 90%; }
+}
+
+/* --- SECTION COMMANDES --- */
+.commands-container {
+    position: relative;
+    z-index: 2;
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.commands-card {
+    width: 100%;
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid #222;
+    border-top: 5px solid #ff0000;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.commands-card h2 {
+    color: #ff0000;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.commands-grid {
+    display: flex;
+    flex-direction: column; /* Force l'alignement en colonne */
+    gap: 20px; /* Espace entre les deux commandes */
+    max-width: 800px; /* Évite que les lignes soient trop larges et dures à lire */
+    margin: -9 auto; /* Centre la liste au milieu de la carte */
+}
+
+.command-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #ff0000;
+    transition: transform 0.2s ease;
+}
+
+.command-item:hover {
+    transform: translateX(5px); /* Petit effet de glissement sympa au survol */
+}
+
+.command-name {
+    display: block;
+    font-family: monospace;
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.command-desc {
+    font-size: 0.95rem;
+    color: #aaaaaa;
+    line-height: 1.5;
+}
+
+/* --- ADAPTATION AUTOMATIQUE (PC, TABLETTE, MOBILE) --- */
+@media (max-width: 1100px) {
+    /* Sur petit PC et Tablette */
+    .hero-section { 
+        flex-direction: column; 
+        height: auto; 
+        padding: 60px 0; 
+        text-align: center; 
+        justify-content: center;
+    }
+    .rules-container { 
+        flex-direction: column; 
+        width: 90%;
+    }
+    .ip-card { 
+        width: 100%; 
+        max-width: 380px; /* Évite que la carte IP devienne géante sur tablette */
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Spécialement pour les Téléphones Portables */
+    .server-brand h1 {
+        font-size: 2.5rem; /* Réduit un peu le titre pour qu'il tienne sur un petit écran */
+    }
+    .rules-card {
+        padding: 20px; /* Moins d'espace interne pour laisser plus de place au texte */
+    }
+    .red-divider {
+        width: 60%; /* Élargit un peu la barre rouge sur mobile pour qu'elle reste visible */
+    }
+}
